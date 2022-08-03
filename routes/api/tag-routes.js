@@ -5,16 +5,49 @@ const { Tag, Product, ProductTag } = require('../../models');
 
 router.get('/', (req, res) => {
   // find all tags
-  // be sure to include its associated Product data
+  Tag.findAll({
+    include: { model:Product }
+  })
+  .then(dbTag => res.json(dbTag))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 router.get('/:id', (req, res) => {
   // find a single tag by its `id`
-  // be sure to include its associated Product data
+  Tag.findOne({
+    include: { model:Product },
+    where:{
+      id: req.params.id
+    }
+  })
+  .then(dbTag => res.json(dbTag))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 router.post('/', (req, res) => {
   // create a new tag
+  Tag.create({
+    tag_name: req.body.tag_name
+  })
+  .then((newTag) =>{
+    if(!newTag){
+      res.send("Empty Category")
+    }else{
+      res.send(newTag)
+    }
+  }
+    )
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+
 });
 
 router.put('/:id', (req, res) => {
