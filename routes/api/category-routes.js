@@ -60,7 +60,7 @@ router.put('/:id', (req, res) => {
   },
   {
     where:{
-      id: req.body.id
+      id: req.params.id
     }
   })
   .then((updatedCategory) =>{

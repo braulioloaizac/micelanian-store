@@ -109,6 +109,14 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
+  Product.destroy({
+    where:{
+      id: req.params.id
+    } 
+  })
+  .then(
+    res.send(`Product ${req.params.id} deleted`)
+  )
 });
 
 module.exports = router;
