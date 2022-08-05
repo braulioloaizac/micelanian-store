@@ -6,7 +6,7 @@ This application is used to store and get information about an e-comerce website
 
 
 
-## Table of Contents (Optional)
+## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
