@@ -1,5 +1,5 @@
 
-# Employee Manager App 1.0
+# Micelanian Store 3.6.5
 
 ## Description
 This application is used to store and get information about an e-comerce website, it has the products classified by category and tags, or if you want to search categories and then their products you can do it, the same to the tags, you can see products by their tag. The application was made using the sequelize as ORM and uses nodejs with express.js to run the API, also for a security layer it uses dotenv to store personal information.
